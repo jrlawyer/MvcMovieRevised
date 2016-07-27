@@ -55,7 +55,16 @@ namespace MvcMovie.Models
                        Genre = "Western",
                        Rating = "N/A",
                        Price = 3.99M
-                   }
+                   },
+
+                     new Movie
+                     {
+                         Title = "JAWS",
+                         ReleaseDate = DateTime.Parse("1975-6-20"),
+                         Genre = "Horror",
+                         Rating = "R",
+                         Price = 5.99M
+                     }
                 );
                 context.SaveChanges();
             }
