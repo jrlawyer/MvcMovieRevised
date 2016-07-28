@@ -48,3 +48,12 @@ textarea {
     display: none
   }
 }
+
+/*.jumbotron {
+    background-image:url("../images/image1.jpg");
+    height: 25em;
+    width: 100%;
+    background-position: 100%, 0%;
+    background-size: cover;
+    background-repeat: no-repeat; 
+}*/
