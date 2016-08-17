@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
+using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace MvcMovie.Data.Migrations
+namespace MvcMovie.Migrations
 {
-    public partial class CreateIdentitySchema : Migration
+    public partial class initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -62,6 +60,23 @@ namespace MvcMovie.Data.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Movie",
+                columns: table => new
+                {
+                    ID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Genre = table.Column<string>(maxLength: 30, nullable: false),
+                    Price = table.Column<decimal>(nullable: false),
+                    Rating = table.Column<string>(maxLength: 5, nullable: true),
+                    ReleaseDate = table.Column<DateTime>(nullable: false),
+                    Title = table.Column<string>(maxLength: 60, nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Movie", x => x.ID);
                 });
 
             migrationBuilder.CreateTable(
@@ -208,6 +223,9 @@ namespace MvcMovie.Data.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
+
+            migrationBuilder.DropTable(
+                name: "Movie");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

@@ -5,13 +5,12 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using MvcMovie.Data;
 
-namespace MvcMovie.Data.Migrations
+namespace MvcMovie.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20160727134336_rating")]
-    partial class rating
+    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.0-rtm-21431")
@@ -178,15 +177,19 @@ namespace MvcMovie.Data.Migrations
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Genre");
+                    b.Property<string>("Genre")
+                        .IsRequired()
+                        .HasAnnotation("MaxLength", 30);
 
                     b.Property<decimal>("Price");
 
-                    b.Property<string>("Rating");
+                    b.Property<string>("Rating")
+                        .HasAnnotation("MaxLength", 5);
 
                     b.Property<DateTime>("ReleaseDate");
 
-                    b.Property<string>("Title");
+                    b.Property<string>("Title")
+                        .HasAnnotation("MaxLength", 60);
 
                     b.HasKey("ID");
 

@@ -4961,7 +4961,7 @@ a.badge:focus {
 
 .jumbotron {
     background-image:url("../../../../images/image3.jpg");
-    height: 10em;
+    height: 12em;
     width: 100%;
     background-position: 50%, 0%;
     background-size: cover;
