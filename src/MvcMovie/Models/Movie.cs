@@ -27,6 +27,7 @@ namespace MvcMovie.Models
         [StringLength(5)]
         public string Rating { get; set; }
 
+        public string Opinion { get; set; }
         
     }
 }
